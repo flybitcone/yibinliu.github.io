@@ -1,211 +1,50 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>你的名字 | Personal Website</title>
-  <meta name="description" content="学术主页 / 项目 / 简历 / 联系方式" />
-  <style>
-    /* —— 简洁现代风，纯本地 CSS，兼容暗色模式 —— */
-    :root {
-      --bg: #0b0c10;
-      --card: #121318;
-      --text: #eaeaea;
-      --muted: #a9acb3;
-      --brand: #4aa3ff;
-      --border: #2a2d36;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --radius: 16px;
-      --maxw: 980px;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f8fafc;
-        --card: #ffffff;
-        --text: #0f172a;
-        --muted: #475569;
-        --brand: #2563eb;
-        --border: #e2e8f0;
-        --shadow: 0 12px 28px rgba(2,6,23,.08);
-      }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; font: 16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      color: var(--text); background: radial-gradient(1000px 800px at 10% -10%, rgba(74,163,255,.12), transparent 60%),
-               radial-gradient(800px 600px at 110% 10%, rgba(99,102,241,.12), transparent 60%), var(--bg);
-    }
-    a { color: var(--brand); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    header {
-      position: sticky; top: 0; backdrop-filter: saturate(140%) blur(8px);
-      background: color-mix(in oklab, var(--bg) 85%, transparent);
-      border-bottom: 1px solid var(--border);
-      z-index: 10;
-    }
-    .nav {
-      margin: 0 auto; max-width: var(--maxw); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
-    }
-    .brand { font-weight: 700; letter-spacing: .2px; }
-    .links { display: flex; gap: 18px; font-size: 14px; }
-
-    .container { max-width: var(--maxw); margin: 28px auto 80px; padding: 0 20px; }
-
-    .hero { display: grid; grid-template-columns: 120px 1fr; gap: 24px; align-items: center; margin-top: 26px; }
-    .avatar { width: 120px; height: 120px; border-radius: 50%; border: 1px solid var(--border); box-shadow: var(--shadow); object-fit: cover; background: var(--card); }
-    .hero h1 { margin: 0 0 6px; font-size: 28px; }
-    .hero p { margin: 0; color: var(--muted); }
-
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; margin-top: 28px; }
-    .card { grid-column: span 12; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
-    .card h2 { margin: 0 0 12px; font-size: 20px; }
-    .muted { color: var(--muted); }
-
-    /* 两列布局（大屏） */
-    @media (min-width: 900px) {
-      .col-left { grid-column: span 7; }
-      .col-right { grid-column: span 5; }
-    }
-
-    /* 列表样式 */
-    .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-    .item { padding: 12px; border: 1px dashed var(--border); border-radius: 12px; }
-    .item strong { display: block; }
-
-    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .badge { padding: 6px 10px; font-size: 12px; border: 1px solid var(--border); border-radius: 999px; background: color-mix(in oklab, var(--card) 70%, transparent); }
-
-    footer { text-align: center; color: var(--muted); padding: 40px 20px 60px; }
-    .btn { display: inline-block; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border); background: var(--card); box-shadow: var(--shadow); }
-    .btn:hover { transform: translateY(-1px); transition: .2s ease; }
-
-    /* 锚点滚动 */
-    html { scroll-behavior: smooth; }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yibin Liu | Curriculum Vitae</title>
+<link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <nav class="nav">
-      <div class="brand">你的名字</div>
-      <div class="links">
-        <a href="#about">关于</a>
-        <a href="#publications">论文</a>
-        <a href="#projects">项目</a>
-        <a href="#cv">简历</a>
-        <a href="#contact">联系</a>
-      </div>
-    </nav>
-  </header>
 
-  <main class="container">
-    <!-- 头图 / 个人信息 -->
-    <section class="hero">
-      <img class="avatar" src="avatar.jpg" alt="你的头像（将 avatar.jpg 放在同目录）" />
-      <div>
-        <h1>你的名字 <span class="muted">| PhD Candidate / Researcher</span></h1>
-        <p>研究方向：核医学影像 · 放射性核素治疗 · 剂量学 · 深度学习（cGAN / Swin-UNETR / Transformer）。
-          当前于 <strong>某某大学 / 医院</strong> 从事 <em>PSMA 放疗剂量预测</em> 等研究。</p>
-        <div class="badges">
-          <span class="badge">Lu-177 / Y-90 Dosimetry</span>
-          <span class="badge">PET/SPECT 影像</span>
-          <span class="badge">Deep Learning</span>
-          <span class="badge">Registration & Segmentation</span>
+<body>
+<main>
+  <!-- Header -->
+  <header>
+    <div class="profile">
+      <img src="avatar.jpg" alt="avatar" class="avatar">
+      <div class="info">
+        <h1 id="name">刘怡斌</h1>
+        <p id="subtitle">核医学与人工智能剂量学博士研究生</p>
+        <div class="contact">
+          <a href="mailto:yibinliu@ieee.org">yibinliu@ieee.org</a> |
+          <a href="https://github.com/flybitcone" target="_blank">GitHub@flybitcone</a> |
+          <a href="https://scholar.google.com/citations?user=ii-bMtMAAAAJ&hl=en" target="_blank">Google Scholar</a>
         </div>
       </div>
-    </section>
-
-    <div class="grid">
-      <!-- 左列：关于、论文、项目 -->
-      <section id="about" class="card col-left">
-        <h2>关于我</h2>
-        <p>（在这里写 3–6 句话的简介）我是一名从事核医学与医学影像 AI 的研究者，关注 <strong>体素级吸收剂量预测</strong>、<strong>时间积分活度（TIA）估计</strong>、以及 <strong>跨模态配准</strong> 等方向。我的目标是将 AI 与物理建模结合，推动个体化放疗的临床转化。</p>
-        <p class="muted">可在导航栏添加 <code>Blog</code>、<code>News</code> 等页面；也可用 GitHub Actions 自动部署。</p>
-      </section>
-
-      <section id="publications" class="card col-left">
-        <h2>论文精选</h2>
-        <ul class="list">
-          <li class="item">
-            <strong>Artifact-free partial volume correction for 177Lu-PSMA SPECT</strong>
-            <span class="muted">Journal / Year · Authors: 你, 合作者A, 合作者B</span>
-            <div class="badges">
-              <a class="badge" href="#" target="_blank" rel="noopener">PDF</a>
-              <a class="badge" href="#" target="_blank" rel="noopener">DOI</a>
-              <a class="badge" href="#" target="_blank" rel="noopener">Code</a>
-            </div>
-          </li>
-          <li class="item">
-            <strong>Two-step deep learning for voxel-wise Lu-177 PSMA absorbed dose prediction</strong>
-            <span class="muted">Conference / Year · Authors: 你, 合作者…</span>
-            <div class="badges">
-              <a class="badge" href="#" target="_blank" rel="noopener">Poster</a>
-              <a class="badge" href="#" target="_blank" rel="noopener">Slides</a>
-            </div>
-          </li>
-          <li class="item">
-            <strong>Revisiting segmentation thresholds for Lu-177 SPECT</strong>
-            <span class="muted">Preprint / Year · Authors: …</span>
-          </li>
-        </ul>
-      </section>
-
-      <section id="projects" class="card col-left">
-        <h2>项目</h2>
-        <ul class="list">
-          <li class="item">
-            <strong>BIGDOSE：Y-90 / Lu-177 内照射剂量平台</strong>
-            <span class="muted">核素治疗剂量计算与验证；体素剂量图、器官统计、报告导出</span>
-            <div class="badges">
-              <a class="badge" href="#" target="_blank" rel="noopener">GitHub</a>
-              <span class="badge">Python / PyTorch / MONAI</span>
-            </div>
-          </li>
-          <li class="item">
-            <strong>PSMA PET → SPECT/TIA 合成</strong>
-            <span class="muted">cGAN + Swin-UNETR 两步预测框架；器官约束与偏置正则</span>
-          </li>
-          <li class="item">
-            <strong>CoRX-Net 配准工具链</strong>
-            <span class="muted">Rigid/Affine/B-spline/Diffeomorphic，多中心数据对齐</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 右列：简历、联系 -->
-      <section id="cv" class="card col-right">
-        <h2>简历</h2>
-        <p>下载最新 PDF 简历：
-          <a class="btn" href="cv.pdf" download>CV.pdf</a>
-        </p>
-        <ul class="list">
-          <li class="item"><strong>教育</strong> 某某大学 · 博士研究生（20xx–）</li>
-          <li class="item"><strong>经历</strong> 某某医院/研究所 · 访问学者（20xx–20xx）</li>
-          <li class="item"><strong>荣誉</strong> 奖学金 / Student Paper Award / …</li>
-        </ul>
-      </section>
-
-      <section id="contact" class="card col-right">
-        <h2>联系</h2>
-        <ul class="list">
-          <li class="item"><strong>邮箱</strong> you@example.com</li>
-          <li class="item"><strong>Google Scholar</strong> <a href="#" target="_blank" rel="noopener">链接</a></li>
-          <li class="item"><strong>GitHub</strong> <a href="#" target="_blank" rel="noopener">@yourid</a></li>
-          <li class="item"><strong>ORCID</strong> <a href="#" target="_blank" rel="noopener">0000-0000-0000-0000</a></li>
-        </ul>
-        <p class="muted">提示：把 <code>avatar.jpg</code>、<code>cv.pdf</code> 放在同目录即可生效。</p>
-      </section>
     </div>
-  </main>
+    <div class="controls">
+      <a id="downloadBtn" href="cv_cn.pdf" class="btn" download>📄 下载简历</a>
+      <div id="toggleLang" class="lang-toggle">EN</div>
+    </div>
+  </header>
 
-  <footer>
-    © <span id="year"></span> 你的名字 · Last updated automatically
-  </footer>
+  <!-- === 各模块 === -->
+  <section id="about"></section>
+  <section id="education"></section>
+  <section id="experience"></section>
+  <section id="publications"></section>
+  <section id="patents"></section>
+  <section id="activities"></section>
+  <section id="affiliations"></section>
+  <section id="skills"></section>
+  <section id="honors"></section>
 
-  <script>
-    // 年份自动更新
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <footer>© <span id="year"></span> 刘怡斌 · Curriculum Vitae</footer>
+</main>
+
+<script src="content_cn.js"></script>
+<script src="content_en.js"></script>
+<script src="switch_lang.js"></script>
 </body>
 </html>
